@@ -19,9 +19,3 @@ function App() {
 export default App;
 
 
-// └── App (главный компонент)
-//     ├── Header (заголовок)
-//     └── TodoList (список)
-//         ├── Search (поиск)
-//         ├── AddTask (добавление)
-//         └── TodoListItem (задача 1, задача 2...)

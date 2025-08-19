@@ -8,16 +8,16 @@ function App() {
         <div className="App">
             <div className="Todo_container">
                 <div className="HeadTodo">
-                <h1 className="Todo_h1">TODO List Demo App</h1>
-                <p className="Todo_p">Do it now.</p>
+                    <h1 className="Todo_h1">TODO List Demo App</h1>
+                    <p className="Todo_p">Do it now.</p>
                 </div>
+
                 <TaskInfo/>
                 <TodoList/>
-                </div>
+            </div>
         </div>
     );
 }
 
 export default App;
-
 

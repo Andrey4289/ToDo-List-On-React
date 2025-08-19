@@ -1,6 +1,7 @@
 .TodoListItem2 {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     border-bottom: 2px solid rgb(179, 179, 179);
     font-weight: 600;
     font-size: 20px;
@@ -14,15 +15,8 @@
     justify-content: space-around;
 }
 
-.TodoListItem_container2 p {
-    margin-right: 20px;
-    margin-left: 25px;
-} 
-
 .container2 {
     display: flex;
-    /* justify-content: space-around; */
-    /* margin-left: 30px; */
     gap: 200px;
     max-width: 429px;
     max-height: 66px;
@@ -33,50 +27,79 @@
     text-wrap: nowrap;
 }
 
-.TodoListItem_container_p_status2 {
-    margin-left: 200px;
-}
-
 .completed {
     background-color: #f5f5f56e;
     color: #333333c5;
 }
+
 .completed p{
     text-decoration: line-through;
 
 }
-.completed .liButton{
+
+.completed .statusButton {
     background-color: #f12222;
+    border: 1px solid #f12222;
     color: white;
-    width: 90px;
 }
-.completed .liButton:hover{
+.completed .statusButton:hover{
     background-color: rgb(230, 16, 16);
     color: white;
 }
 
-.liButton {
-    border: none;
+.statusButton {
     color: #fabb1d;
     background-color: white;
-    border: 1px solid#fabb1d;
+    border: 1px solid #fabb1d;
     width: 100px;
     height: 40px;
     border-radius: 5px;
     cursor: pointer;
     transition: 0.3s;
     position: static;
-    margin-top: 14px;
-    margin-left: 175px;
     font-size: 16px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    transition: 1s;
 }
-.liButton:hover{
+
+.statusButton:hover{
     background-color: #fabb1d;
     color: black;
-    
 }
-.color{
-    color:#31bdd8;
+
+.editButton {
+    color: green;
+    background-color: white;
+    border: 1px solid green;
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    position: static;
+    font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.editButton:hover{
+    background-color: green;
+    color: black;
+}
+
+.removeButton {
+    color: red;
+    background-color: white;
+    border: 1px solid red;
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    position: static;
+    font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.removeButton:hover{
+    background-color: red;
+    color: black;
 }

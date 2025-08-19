@@ -1,27 +1,82 @@
-.TodoListItem{
+.TodoListItem2 {
     display: flex;
     justify-content: space-between;
-    border-bottom: 2px solid #333;
+    border-bottom: 2px solid rgb(179, 179, 179);
     font-weight: 600;
     font-size: 20px;
+    color: #333;
+    font-weight: 500;
+    transition: 0.3s;
 }
-.TodoListItem_container{
+
+.TodoListItem_container2 {
     display: flex;
     justify-content: space-around;
 }
-.TodoListItem_container p{
+
+.TodoListItem_container2 p {
     margin-right: 20px;
-    margin-left: 15px;
-}
-.container{
-     display: flex;
+    margin-left: 25px;
+} 
+
+.container2 {
+    display: flex;
     /* justify-content: space-around; */
     /* margin-left: 30px; */
     gap: 200px;
+    max-width: 429px;
+    max-height: 66px;
 }
-.container p{
+
+.container2 p {
     margin-left: 45px;
+    text-wrap: nowrap;
 }
-.TodoListItem_container_p_status{
+
+.TodoListItem_container_p_status2 {
     margin-left: 200px;
+}
+
+.completed {
+    background-color: #f5f5f56e;
+    color: #333333c5;
+}
+.completed p{
+    text-decoration: line-through;
+
+}
+.completed .liButton{
+    background-color: #f12222;
+    color: white;
+    width: 90px;
+}
+.completed .liButton:hover{
+    background-color: rgb(230, 16, 16);
+    color: white;
+}
+
+.liButton {
+    border: none;
+    color: #fabb1d;
+    background-color: white;
+    border: 1px solid#fabb1d;
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    position: static;
+    margin-top: 14px;
+    margin-left: 175px;
+    font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: 1s;
+}
+.liButton:hover{
+    background-color: #fabb1d;
+    color: black;
+    
+}
+.color{
+    color:#31bdd8;
 }

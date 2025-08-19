@@ -1,24 +1,35 @@
 
 import "./TodoListItem.css"
 
-
-
-function TodoListItem() {
+function TodoListItem({ todoData, updateTaskComplited, removeTask }) {
 
     return (
-        <div className="TodoListItem">
-            <div className="container">
-                <p>#</p>
-                <p>Task Name</p>
+        <div
+            className={`TodoListItem2 ${todoData.isComplited ? "completed" : null}`}>
+            <div className="container2">
+                <p>{todoData.taskId}</p>
+                <p>{todoData.title}</p>
             </div>
 
-            <p className="TodoListItem_container_p_status">Status</p>
-            <div className="TodoListItem_container">
+            <button
+                onClick={() => {
+                    updateTaskComplited(todoData.taskId)
+                }}
+                className={`liButton `} >
+                {todoData.isComplited ? "Done" : "Todo"}
+            </button>
+            <div className="TodoListItem_container2">
                 <p>Edit</p>
-                <p>Remove</p>
+
+
+                <button onClick={() => {
+                    removeTask(todoData.taskId)
+                }}>Remove</button>
+
+
             </div>
         </div>
     );
 }
 
-export default TodoListItem;
+export default TodoListItem;        

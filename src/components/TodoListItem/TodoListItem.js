@@ -4,8 +4,7 @@ import "./TodoListItem.css"
 function TodoListItem({ todoData, updateTaskComplited, removeTask }) {
 
     return (
-        <div
-            className={`TodoListItem2 ${todoData.isComplited ? "completed" : null}`}>
+        <div className={`TodoListItem2 ${todoData.isComplited ? "completed" : null}`}>
             <div className="container2">
                 <p>{todoData.taskId}</p>
                 <p>{todoData.title}</p>
@@ -15,19 +14,13 @@ function TodoListItem({ todoData, updateTaskComplited, removeTask }) {
                 onClick={() => {
                     updateTaskComplited(todoData.taskId)
                 }}
-                className={`liButton `} >
+                className='statusButton'>
                 {todoData.isComplited ? "Done" : "Todo"}
             </button>
-            <div className="TodoListItem_container2">
-                <p>Edit</p>
-
-
-                <button onClick={() => {
-                    removeTask(todoData.taskId)
-                }}>Remove</button>
-
-
-            </div>
+            <button className='editButton'>Edit</button>
+            <button className='removeButton' onClick={() => {
+                removeTask(todoData.taskId)
+            }}>Remove</button>
         </div>
     );
 }

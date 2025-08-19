@@ -11,11 +11,9 @@ function TaskInfo() {
                 <p>Task Name</p>
             </div>
 
-            <p className="TodoListItem_container_p_status">Status</p>
-            <div className="TodoListItem_container">
-                <p>Edit</p>
-                <p>Remove</p>
-            </div>
+            <p>Status</p>
+            <p>Edit</p>
+            <p>Remove</p>
         </div>
     );
 }

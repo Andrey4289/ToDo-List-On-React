@@ -14,8 +14,6 @@ function TodoListItem({
       className={`TodoListItem2 ${todoData.isComplited ? "completed" : null}`}
     >
       <div className="container2">
-        {/* <p>{todoData.taskId}</p> */}
-
         {isTaskEdit ? (
           <input
             value={editText}
@@ -28,7 +26,7 @@ function TodoListItem({
         )}
       </div>
 
-      <div className="button-container                ">
+      <div className="button-container">
         <button
           onClick={() => {
             updateTaskComplited(todoData.taskId);

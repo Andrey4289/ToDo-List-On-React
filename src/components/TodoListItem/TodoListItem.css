@@ -16,18 +16,15 @@
   text-align: center;
   border: 1px solid #ddd;
   border-radius: 5px;
+  margin-top: 16px;
+  margin-bottom: 16px;
   font-size: 18px;
   color: #333;
   margin-left: 40px;
-  transform: translateY(10px);
-  /* transform: translateX(34px); */
 }
 
 .container2 {
   display: flex;
-  gap: 200px;
-  /* max-width: 429px; */
-  /* max-height: 66px; */
 }
 
 .container2 p {

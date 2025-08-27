@@ -2,7 +2,7 @@ import "./TodoList.css";
 import TodoListItem from "../TodoListItem/TodoListItem";
 import { useState, useEffect } from "react";
 
-function TodoList({ setCompletedTasksAmount, setTasksAmount, newTask }) {
+function TodoList({ setCompletedTasksAmount, setTasksAmount, newTaskTitle }) {
   const [todos, setTodos] = useState([
     {
       title: "Buy a new car",
@@ -34,15 +34,15 @@ function TodoList({ setCompletedTasksAmount, setTasksAmount, newTask }) {
   }, [todos]);
 
   useEffect(() => {
-    addNewTask(newTask);
-  }, [newTask]);
+    addNewTask(newTaskTitle);
+  }, [newTaskTitle]);
 
-  const addNewTask = (newTask) => {
+  const addNewTask = (newTaskTitle) => {
     const newTodos = todos.map((item) => {
       return item;
     });
     newTodos.push({
-      title: newTask,
+      title: newTaskTitle,
       isComplited: false,
       taskId: Date.now(),
     });

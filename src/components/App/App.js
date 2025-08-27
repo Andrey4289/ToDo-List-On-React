@@ -8,7 +8,7 @@ function App() {
   const [tasksAmount, setTasksAmount] = useState(0);
   const [completedTasksAmount, setCompletedTasksAmount] = useState(0);
 
-  const [newTask, setNewTask] = useState(null);
+  const [newTaskTitle, setNewTaskTitle] = useState(null);
 
   return (
     <div className="App">
@@ -20,14 +20,14 @@ function App() {
         </div>
         <AddNewTask
           addTask={(newTaskData) => {
-            setNewTask(newTaskData);
+            setNewTaskTitle(newTaskData);
           }}
         />
         <TaskInfo />
         <TodoList
           setTasksAmount={setTasksAmount}
           setCompletedTasksAmount={setCompletedTasksAmount}
-          newTask={newTask}
+          newTaskTitle={newTaskTitle}
         />
       </div>
     </div>

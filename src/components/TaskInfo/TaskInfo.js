@@ -7,13 +7,14 @@ function TaskInfo() {
     return (
         <div className="TodoListItem">
             <div className="container">
-                <p>#</p>
+                {/* <p>#</p> */}
                 <p>Task Name</p>
             </div>
-
-            <p>Status</p>
-            <p>Edit</p>
-            <p>Remove</p>
+            <div className="button-info">
+                <p>Status</p>
+                <p className="edit-button">Edit</p>
+                <p>Remove</p>
+            </div>
         </div>
     );
 }

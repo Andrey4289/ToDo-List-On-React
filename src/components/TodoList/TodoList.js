@@ -1,29 +1,9 @@
 import "./TodoList.css"
 import TodoListItem from "../TodoListItem/TodoListItem";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 
-function TodoList() {
-    const updateTaskComplited = (taskId) => {
-        const newTodos = todos.map((item) => {
-            if (taskId == item.taskId) {
-                item.isComplited = !item.isComplited
-            }
-            return item
-        })
-        setTodos(newTodos)
-
-    };
-
-    const removeTask = (taskId) => {
-        const delTodos = todos.filter((item) => {
-            console.log(item)
-            console.log(taskId != item.taskId)
-            console.log("--------------------")
-            return taskId != item.taskId
-        })
-        setTodos(delTodos)
-    }
+function TodoList({ setCompletedTasksAmount, setTasksAmount, newTask }) {
 
     const [todos, setTodos] = useState([
 
@@ -45,13 +25,76 @@ function TodoList() {
             isComplited: false,
         }
     ])
-    return (
-        <div className="TodoList">
-            {todos.map((item) =>
-                <TodoListItem todoData={item} updateTaskComplited={updateTaskComplited} removeTask={removeTask} />
-            )}
-        </div>
-    );
+
+    useEffect(() => {
+        setTasksAmount(todos.length)
+    }, [todos])
+
+
+
+    useEffect(() => {
+        setCompletedTasksAmount(todos.filter(item => item.isComplited === true).length);
+    }, [todos]);
+
+
+    useEffect(() => {
+        addNewTask(newTask)
+    }, [newTask])
+
+    const addNewTask = (newTask) => {
+
+        const newTodos = todos.map((item) => {
+
+            return item
+        })
+        newTodos.push({
+            
+                title: newTask,
+                isComplited: false,
+                taskId: Date.now(),
+            
+        })
+        setTodos(newTodos)
+}
+
+const updateTaskTitle = (taskId, editText) => {
+    const newTodos = todos.map((item) => {
+        if (taskId == item.taskId) {
+            item.title = editText
+        }
+        return item
+    })
+    setTodos(newTodos)
+}
+
+const updateTaskComplited = (taskId) => {
+    const newTodos = todos.map((item) => {
+        if (taskId == item.taskId) {
+            item.isComplited = !item.isComplited
+        }
+        return item
+    })
+    setTodos(newTodos)
+
+};
+
+
+
+const removeTask = (taskId) => {
+    const delTodos = todos.filter((item) => {
+        return taskId != item.taskId
+    })
+    setTodos(delTodos)
+}
+
+
+return (
+    <div className="TodoList">
+        {todos.map((item) =>
+            <TodoListItem todoData={item} updateTaskComplited={updateTaskComplited} removeTask={removeTask} updateTaskTitle={updateTaskTitle} />
+        )}
+    </div>
+);
 }
 
 export default TodoList;

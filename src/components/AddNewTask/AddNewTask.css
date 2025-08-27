@@ -1,34 +1,34 @@
-.AddNewTask{
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    /* margin-bottom: 20px; */
+.AddNewTask {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  /* margin-bottom: 20px; */
 }
 
-.AddNewTask input{
-    width: 880px;
-    border: 1px solid black;
-    height: 35px;
-    color: black;
-    outline: none;
-    padding-left: 15px;
+.AddNewTask input {
+  width: 880px;
+  border: 1px solid black;
+  height: 35px;
+  color: black;
+  outline: none;
+  padding-left: 15px;
 }
-.AddNewTask input:focus{
-    border-color: cyan;
+.AddNewTask input:focus {
+  border-color: cyan;
 }
-.AddNewTask button{
-    width: 100px;
-    height: 40px;
-    border: 1px solid cyan;
-    background-color: white;
-    color: cyan;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    transition: 0.3s;
+.AddNewTask button {
+  width: 100px;
+  height: 40px;
+  border: 1px solid cyan;
+  background-color: white;
+  color: cyan;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  transition: 0.3s;
 }
-.AddNewTask button:hover{
-    background-color: cyan;
-    color: white;
+.AddNewTask button:hover {
+  background-color: cyan;
+  color: white;
 }

@@ -38,14 +38,18 @@ function TodoList({ setCompletedTasksAmount, setTasksAmount, newTaskTitle }) {
   }, [newTaskTitle]);
 
   const addNewTask = (newTaskTitle) => {
+    if (newTaskTitle === null) return;
+
     const newTodos = todos.map((item) => {
       return item;
     });
+
     newTodos.push({
       title: newTaskTitle,
       isComplited: false,
       taskId: Date.now(),
     });
+
     setTodos(newTodos);
   };
 

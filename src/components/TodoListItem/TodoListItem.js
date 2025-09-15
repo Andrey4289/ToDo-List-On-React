@@ -20,7 +20,7 @@ function TodoListItem({ todoData, updateTaskComplited, removeTask, updateTaskTit
 
             </div>
 
-            <div className="button-container                ">
+            <div className="button-container">
                 <button
                     onClick={() => {
                         updateTaskComplited(todoData.taskId)

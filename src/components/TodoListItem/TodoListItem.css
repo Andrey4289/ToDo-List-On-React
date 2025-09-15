@@ -8,6 +8,7 @@
     color: #333;
     font-weight: 500;
     transition: 0.3s;
+     max-height: 66px; 
 }
 
 .TodoListItem2 input {
@@ -19,7 +20,9 @@
     font-size: 18px;
     color: #333;
     margin-left: 40px;
-    transform: translateY(10px);
+    margin-bottom: 13px;
+    margin-top: 12px;
+    /* transform: translateY(10px); */
     /* transform: translateX(34px); */
 } 
 
@@ -28,7 +31,6 @@
     display: flex;
     gap: 200px;
     /* max-width: 429px; */
-    /* max-height: 66px; */
 }
 
 .container2 p {

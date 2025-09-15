@@ -1,0 +1,36 @@
+.Search-task {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    /* margin-bottom: 20px; */
+}
+
+.Search-task input {
+    width: 860px;
+    margin-bottom: 30px;
+    border: 1px solid black;
+    height: 35px;
+    color: black;
+    outline: none;
+    padding-left: 15px;
+}
+
+.Search-task input:focus {
+    border-color: cyan;
+}
+.Search-task button{
+    width: 100px;
+    height: 40px;
+    border: 1px solid cyan;
+    background-color: white;
+    color: cyan;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: 0.3s;
+}
+.Search-task button:hover{
+    background-color: cyan;
+    color: white;
+}

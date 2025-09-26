@@ -4,13 +4,21 @@ import TaskInfo from "../TaskInfo/TaskInfo";
 import SearchTask from "../SearchTask/SearchTask";
 import AddNewTask from "../AddNewTask/AddNewTask";
 import { useState, useEffect } from "react";
-import { todosArray, setNewTodos } from "../../data/todos";
+import { setNewTodos } from "../../data/todos";
+import { useSelector } from "react-redux";
 
 function App() {
+
+    const store = useSelector((state) =>{
+        return state.todos;
+    })
+
+    const todosArray = [];
 
     const [taskToSearch, setTaskToSearch] = useState("")
 
     const [tasksAmount, setTasksAmount] = useState(0)
+
     const [completedTasksAmount, setCompletedTasksAmount] = useState(0)
 
     const [newTask, setNewTask] = useState(null)
@@ -28,95 +36,32 @@ function App() {
         } else {
             return todos;
         }
-        // setTodos(NewTasks)
+        
     }
+ 
 
-    const updateTaskTitle = (taskId, editText) => {
-        const newTodos = todos.map((item) => {
-            if (taskId == item.taskId) {
-                item.title = editText
-            }
-            return item
-        })
-        setTodos(newTodos)
-    }
-
-    const updateTaskComplited = (taskId) => {
-        const newTodos = todos.map((item) => {
-            if (taskId == item.taskId) {
-                item.isComplited = !item.isComplited
-            }
-            return item
-        })
-        setTodos(newTodos)
-
-    };
-
-
-
-    const removeTask = (taskId) => {
-        const delTodos = todos.filter((item) => {
-            return taskId != item.taskId
-        })
-        setTodos(delTodos)
-    }
-
-    useEffect(() => {
-        if (newTask && newTask.trim() !== "") {
-            addNewTask(newTask)
-        }
-    }, [newTask])
-
-    // useEffect(() => {
-    //     searchTasks(taskToSearch)
-    // }, [taskToSearch])
-
-
-    const addNewTask = (newTask) => {
-
-        const newTodos = todos.map((item) => {
-
-            return item
-        })
-        newTodos.push({
-
-            title: newTask,
-            isComplited: false,
-            taskId: Date.now(),
-
-        })
-        setTodos(newTodos)
-    }
     useEffect(() => {
         setCompletedTasksAmount(todos.filter(item => item.isComplited === true).length);
     }, [todos]);
 
-    useEffect(() => {
-        setTasksAmount(todos.length)
-        setNewTodos(todos)
-        console.log(todosArray)
-    }, [todos])
+
     return (
         <div className="App">
             <div className="Todo_container">
                 <div className="HeadTodo">
                     <h1 className="Todo_h1">TODO List Demo App</h1>
-                    <p className="Todo_p">Tasks: {tasksAmount}</p>
-                    <p className="Todo_p">Tasks completed: {completedTasksAmount}</p>
+                    <p className="Todo_p">Tasks: {store.length}</p>
+                    <p className="Todo_p">Tasks completed: {store.filter(item => item.isComplited).length}</p>
                 </div>
 
                 <SearchTask searchTasks={(toSearch) => {
                     setTaskToSearch(toSearch)
                 }} />
-                <AddNewTask addTask={(newTaskData) => {
-                    setNewTask(newTaskData)
-                }} />
+                <AddNewTask />
                 <TaskInfo />
                 <TodoList
                     list={searchTasks(taskToSearch)}
-                    updateTaskTitle={updateTaskTitle}
-                    updateTaskComplited={updateTaskComplited}
-                    removeTask={removeTask}
+        
                 />
             </div>
         </div>

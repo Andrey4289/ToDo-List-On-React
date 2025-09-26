@@ -1,10 +1,17 @@
-
+import { updateTaskComplited, deleteTask, updateTaskTitle, addTask } from "../../store/actions"
+import { useDispatch } from "react-redux";
 import { useState } from "react";
 import "./TodoListItem.css"
 
-function TodoListItem({ todoData, updateTaskComplited, removeTask, updateTaskTitle }) {
+function TodoListItem({ todoData }) {
+
     const [isTaskEdit, setIsTaskEdit] = useState(false);
+
     const [editText, setEditText] = useState(todoData.title);
+
+    const dispath = useDispatch();
+
+
     return (
         <div className={`TodoListItem2 ${todoData.isComplited ? "completed" : null}`}>
             <div className="container2">
@@ -23,7 +30,7 @@ function TodoListItem({ todoData, updateTaskComplited, removeTask, updateTaskTit
             <div className="button-container">
                 <button
                     onClick={() => {
-                        updateTaskComplited(todoData.taskId)
+                        updateTaskComplited(dispath, todoData.taskId)
                     }}
                     className='statusButton'>
                     {todoData.isComplited ? "Done" : "Todo"}
@@ -32,11 +39,11 @@ function TodoListItem({ todoData, updateTaskComplited, removeTask, updateTaskTit
                 <button
                     onClick={() => {
                         setIsTaskEdit(!isTaskEdit)
-                        updateTaskTitle(todoData.taskId, editText)
+                        updateTaskTitle(dispath, todoData.taskId, editText)
                     }}
                     className='editButton'>{isTaskEdit ? "Save" : "Edit"}</button>
                 <button className='removeButton' onClick={() => {
-                    removeTask(todoData.taskId)
+                    deleteTask(dispath, todoData.taskId)
                 }}>Remove</button>
             </div>
         </div>

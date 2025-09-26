@@ -2,17 +2,23 @@ import "./TodoList.css"
 import TodoListItem from "../TodoListItem/TodoListItem";
 import { useState, useEffect } from "react";
 import { todosArray, setNewTodos } from "../../data/todos";
+import { useSelector } from "react-redux";
 
-function TodoList({list, updateTaskTitle, removeTask, updateTaskComplited}) {
+function TodoList({ updateTaskTitle, removeTask, updateTaskComplited }) {
+
+    const todos = useSelector((state)=>{
+        return state.todos;
+    })
 
     return (
+        
         <div className="TodoList">
-            {list.map((item) =>
-                <TodoListItem 
-                todoData={item} 
-                updateTaskComplited={updateTaskComplited} 
-                removeTask={removeTask} 
-                updateTaskTitle={updateTaskTitle} />
+            {todos.map((item) =>
+                <TodoListItem
+                    todoData={item}
+                    updateTaskComplited={updateTaskComplited}
+                    removeTask={removeTask}
+                    updateTaskTitle={updateTaskTitle} />
             )}
         </div>
     );
